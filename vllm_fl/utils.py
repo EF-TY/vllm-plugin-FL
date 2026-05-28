@@ -40,6 +40,8 @@ VENDOR_DEVICE_MAP: dict[str, dict[str, str]] = {
     "sunrise": {"device_type": "ptpu", "device_name": "ptpu"},
     # Registered backend: vendor/hygon
     "hygon": {"device_type": "cuda", "device_name": "cuda"},    
+    # Registered backend: vendor/gcu (Enflame GCU / torch_gcu)
+    "gcu": {"device_type": "gcu", "device_name": "gcu"},
 }
 
 
@@ -208,7 +210,7 @@ _load_op_config_from_env()
 class DeviceInfo:
     def __init__(self):
         self.device = DeviceDetector()
-        self.supported_device = ["nvidia", "ascend", "metax", "mthreads", "sunrise"]
+        self.supported_device = ["nvidia", "ascend", "metax", "mthreads", "sunrise", "gcu"]
         backend.set_torch_backend_device_fn(self.device.vendor_name)
 
     @property
