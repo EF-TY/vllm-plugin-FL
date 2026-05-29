@@ -426,7 +426,7 @@ class PlatformFL(Platform):
         # TODO: For PTPU/Sunrise devices, return None
         if cls.device_type == "ptpu":
             return None        
-        if cls.vendor_name == "gcu":
+        if cls.device_type == "gcu":
             gcu = getattr(torch, "gcu", None)
             if gcu is None:
                 return None

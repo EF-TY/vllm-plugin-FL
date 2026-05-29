@@ -41,7 +41,7 @@ VENDOR_DEVICE_MAP: dict[str, dict[str, str]] = {
     # Registered backend: vendor/hygon
     "hygon": {"device_type": "cuda", "device_name": "cuda"},    
     # Registered backend: vendor/gcu (Enflame GCU / torch_gcu)
-    "gcu": {"device_type": "gcu", "device_name": "gcu"},
+    "enflame": {"device_type": "gcu", "device_name": "gcu"},
 }
 
 
