@@ -44,11 +44,6 @@ def _register_c_ops_privateuse1_fallbacks() -> None:
     except (ImportError, OSError):
         pass
 
-    # Ensure _C schemas are registered before we add fallback kernels.
-    # register_op_schemas() is idempotent (guarded by ._lib).
-    from vllm_fl.ops._C_ops_registry import register_op_schemas
-    register_op_schemas()
-
     try:
         lib = torch.library.Library("_C", "FRAGMENT")
     except Exception:
