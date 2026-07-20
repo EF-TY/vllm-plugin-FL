@@ -17,10 +17,11 @@ def apply_gcu_patches() -> None:
     global _patches_applied
     if _patches_applied:
         return
-    _patches_applied = True
+    
     apply_bilinear_pos_embed_gcu_patch()
     apply_chunk_delta_h_gcu_patch()
     apply_fused_recurrent_packed_decode_gcu_patch()
+    _patches_applied = True
 
 
 def apply_op_kernel_patches() -> None:
