@@ -49,6 +49,8 @@ VENDOR_DEVICE_MAP: dict[str, dict[str, str]] = {
     "thead": {"device_type": "cuda", "device_name": "thead"},
     # Registered backend: vendor/gcu (Enflame GCU / torch_gcu)
     "enflame": {"device_type": "gcu", "device_name": "gcu"},
+    # Registered backend: vendor/txda
+    "tsingmicro": {"device_type": "txda", "device_name": "txda"},
 }
 
 
