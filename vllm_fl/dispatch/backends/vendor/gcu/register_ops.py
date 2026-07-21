@@ -52,18 +52,12 @@ def _register_c_ops_privateuse1_fallbacks() -> None:
 
     from vllm_fl.ops._C_ops_registry import _apply_repetition_penalties_impl
 
-    try:
-        lib.impl(
-            "apply_repetition_penalties_",
-            _apply_repetition_penalties_impl,
-            "PrivateUse1",
-        )
-        logger.info("Registered _C::apply_repetition_penalties_ for PrivateUse1")
-    except Exception as e:
-        logger.exception(
-            "Failed to register _C::apply_repetition_penalties_ for PrivateUse1: %s",
-            e,
-        )
+    lib.impl(
+        "apply_repetition_penalties_",
+        _apply_repetition_penalties_impl,
+        "PrivateUse1",
+    )
+    logger.info("Registered _C::apply_repetition_penalties_ for PrivateUse1")
 
     # Keep the Library object alive — if it is garbage-collected, all
     # implementations registered through it are removed from the dispatch
